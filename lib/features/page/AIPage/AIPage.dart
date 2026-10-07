@@ -87,7 +87,7 @@ class _AIPageState extends State<AIPage> with TickerProviderStateMixin {
       _messages.add(ChatMessage(
         id:        'welcome',
         role:      MessageRole.assistant,
-        content:   'Xin chào! Tôi là **DoctorĐồng AI** ✨\n\nTôi có thể giúp bạn:\n• 📊 Phân tích chi tiêu hàng tháng\n• 💡 Gợi ý cắt giảm & tiết kiệm\n• 🎯 Lập kế hoạch ngân sách\n\nBạn muốn hỏi gì hôm nay?',
+        content:   'Xin chào! Tôi là **FinFlow AI** ✨\n\nTôi có thể giúp bạn:\n• 📊 Phân tích chi tiêu hàng tháng\n• 💡 Gợi ý cắt giảm & tiết kiệm\n• 🎯 Lập kế hoạch ngân sách\n\nBạn muốn hỏi gì hôm nay?',
         timestamp: DateTime.now(),
       ));
     });

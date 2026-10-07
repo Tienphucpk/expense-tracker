@@ -13,7 +13,7 @@
         android:required="false"/>
 
     <application
-        android:label="expense_tracker"
+        android:label="FinFlow"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
 

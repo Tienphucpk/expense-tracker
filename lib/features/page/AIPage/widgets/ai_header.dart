@@ -92,7 +92,7 @@ class AIHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              Text('DoctorĐồng AI',
+              Text('FinFlow AI',
                   style: TextStyle(
                     fontSize: 16.sp, fontWeight: FontWeight.w700,
                     color: AIColors.textPrimary, letterSpacing: -0.3,

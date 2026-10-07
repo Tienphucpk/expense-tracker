@@ -238,7 +238,7 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
               ),
               SizedBox(width: 8.w),
               Text(
-                'DoctorDong',
+                'FinFlow',
                 style: TextStyle(
                   fontSize: 17.sp,
                   fontWeight: FontWeight.w700,

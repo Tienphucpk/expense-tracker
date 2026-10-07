@@ -376,7 +376,7 @@ class _SettingsPageState extends State<SettingsPage>
                     icon: Icons.info_outline_rounded,
                     color: SettingsColors.textSecondary,
                     label: 'Về ứng dụng',
-                    subtitle: 'DoctorĐồng v1.0.0',
+                    subtitle: 'FinFlow v1.0.0',
                     onTap: () {},
                   ),
                 ],

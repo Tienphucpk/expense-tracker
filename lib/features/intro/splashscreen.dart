@@ -415,22 +415,22 @@ class _SplashScreenState extends State<SplashScreen>
                   child: Column(
                     children: [
                       Text(
-                        'DOCTOR',
+                        'EXPENSE TRACKER',
                         style: TextStyle(
-                          fontSize: 13.sp,
-                          fontWeight: FontWeight.w400,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w600,
                           color: _dim,
-                          letterSpacing: 8,
+                          letterSpacing: 4,
                         ),
                       ),
-                      SizedBox(height: 4.h),
+                      SizedBox(height: 6.h),
                       Text(
-                        'ĐỒNG',
+                        'FinFlow',
                         style: TextStyle(
-                          fontSize: 42.sp,
+                          fontSize: 38.sp,
                           fontWeight: FontWeight.w800,
                           color: const Color(0xFF111827),
-                          letterSpacing: 4,
+                          letterSpacing: -0.5,
                           height: 1.0,
                         ),
                       ),
