@@ -30,7 +30,9 @@
 .pub-cache/
 .pub-preload-cache/
 .pub/
-build/
+build/*
+!build/web/
+*.symbols
 coverage/
 
 # Android related
