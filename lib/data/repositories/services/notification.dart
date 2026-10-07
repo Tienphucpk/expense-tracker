@@ -1,4 +1,5 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationService {
@@ -10,6 +11,7 @@ class NotificationService {
   FlutterLocalNotificationsPlugin();
 
   Future<void> init() async {
+    if (kIsWeb) return;
     // 🔐 xin quyền
     await FirebaseMessaging.instance.requestPermission();
 
@@ -51,6 +53,7 @@ class NotificationService {
   }
 
   Future<String?> getToken() async {
+    if (kIsWeb) return null;
     return await FirebaseMessaging.instance.getToken();
   }
 }
