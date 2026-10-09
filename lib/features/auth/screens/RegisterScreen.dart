@@ -840,6 +840,10 @@ class _RegisterScreenState extends State<RegisterScreen>
             : Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            if (_step == 2) ...[
+              Icon(Icons.person_add_rounded, size: 18.sp, color: Colors.white),
+              SizedBox(width: 8.w),
+            ],
             Text(
               _step == 1 ? 'Tiếp theo' : 'Tạo tài khoản',
               style: TextStyle(

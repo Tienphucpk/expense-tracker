@@ -67,7 +67,11 @@ class AIScannerButton extends StatelessWidget {
                     ),
                   ),
                   child: Center(
-                    child: Text('✨', style: TextStyle(fontSize: 16.sp)),
+                    child: Icon(
+                      Icons.auto_awesome_rounded,
+                      color: AppColors.gold,
+                      size: 17.sp,
+                    ),
                   ),
                 ),
                 SizedBox(width: 10.w),
@@ -383,7 +387,11 @@ class AIScannerPanel extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Text('💡', style: TextStyle(fontSize: 14.sp)),
+                    Icon(
+                      Icons.lightbulb_outline_rounded,
+                      color: AppColors.gold,
+                      size: 16.sp,
+                    ),
                     SizedBox(width: 8.w),
                     Expanded(
                       child: Text(

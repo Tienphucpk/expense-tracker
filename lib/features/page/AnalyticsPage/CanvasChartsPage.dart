@@ -118,6 +118,11 @@ class _CanvasChartsPageState extends State<CanvasChartsPage>
         backgroundColor: _bg,
         foregroundColor: const Color(0xFF111827),
         elevation: 0,
+        centerTitle: true,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded, color: const Color(0xFF111827), size: 18.sp),
+          onPressed: () => Navigator.pop(context),
+        ),
         title: const Text('Biểu đồ thống kê'),
       ),
       body: ListView(

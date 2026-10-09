@@ -664,7 +664,7 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
           children: [
             _typeTab(
               TransactionType.income,
-              '↑',
+              Icons.south_west_rounded,
               'Thu nhập',
               AppColors.green,
               wallets,
@@ -672,7 +672,7 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
             SizedBox(width: 4.w),
             _typeTab(
               TransactionType.expense,
-              '↓',
+              Icons.north_east_rounded,
               'Chi tiêu',
               AppColors.red,
               wallets,
@@ -680,7 +680,7 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
             SizedBox(width: 4.w),
             _typeTab(
               TransactionType.transfer,
-              '⇄',
+              Icons.swap_horiz_rounded,
               'Chuyển',
               AppColors.blue,
               wallets,
@@ -693,7 +693,7 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
 
   Widget _typeTab(
     TransactionType type,
-    String arrow,
+    IconData icon,
     String label,
     Color color,
     List<WalletModel> wallets,
@@ -716,13 +716,10 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                arrow,
-                style: TextStyle(
-                  fontSize: 14.sp,
-                  color: isSelected ? color : AppColors.textSecondary,
-                  fontWeight: FontWeight.w700,
-                ),
+              Icon(
+                icon,
+                size: 15.sp,
+                color: isSelected ? color : AppColors.textSecondary,
               ),
               SizedBox(width: 5.w),
               Text(
@@ -730,7 +727,7 @@ class _AddPageState extends State<AddPage> with TickerProviderStateMixin {
                 style: TextStyle(
                   fontSize: 12.sp,
                   color: isSelected ? color : AppColors.textSecondary,
-                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                 ),
               ),
             ],

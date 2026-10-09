@@ -423,14 +423,21 @@ class _LoginScreenState extends State<LoginScreen> with SingleTickerProviderStat
                   color: Colors.white,
                 ),
               )
-            : Text(
-                'Đăng nhập',
-                style: TextStyle(
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                  letterSpacing: -0.2,
-                ),
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.login_rounded, size: 18.sp, color: Colors.white),
+                  SizedBox(width: 8.w),
+                  Text(
+                    'Đăng nhập',
+                    style: TextStyle(
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                      letterSpacing: -0.2,
+                    ),
+                  ),
+                ],
               ),
       ),
     );

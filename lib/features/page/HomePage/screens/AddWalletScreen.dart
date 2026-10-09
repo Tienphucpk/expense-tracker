@@ -347,14 +347,14 @@ class _AddWalletScreenState extends State<AddWalletScreen> with SingleTickerProv
         children: [
           _typeTab(
             type: _WalletType.cash,
-            icon: '💵',
+            icon: Icons.payments_rounded,
             label: 'Tiền mặt',
             accentColor: _green,
           ),
           SizedBox(width: 4.w),
           _typeTab(
             type: _WalletType.bank,
-            icon: '💳',
+            icon: Icons.credit_card_rounded,
             label: 'Thẻ ngân hàng',
             accentColor: _gold,
           ),
@@ -365,7 +365,7 @@ class _AddWalletScreenState extends State<AddWalletScreen> with SingleTickerProv
 
   Widget _typeTab({
     required _WalletType type,
-    required String icon,
+    required IconData icon,
     required String label,
     required Color accentColor,
   }) {
@@ -385,21 +385,25 @@ class _AddWalletScreenState extends State<AddWalletScreen> with SingleTickerProv
             borderRadius: BorderRadius.circular(12.r),
             border: Border.all(
               color: isSelected
-                  ? accentColor.withOpacity(0.4)
-                  : Colors.transparent,
+                ? accentColor.withOpacity(0.4)
+                : Colors.transparent,
               width: 1.w,
             ),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(icon, style: TextStyle(fontSize: 18.sp)),
+              Icon(
+                icon,
+                size: 20.sp,
+                color: isSelected ? accentColor : _textSecondary,
+              ),
               SizedBox(width: 8.w),
               Text(
                 label,
                 style: TextStyle(
                   fontSize: 13.sp,
-                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w400,
+                  fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                   color: isSelected ? accentColor : _textSecondary,
                 ),
               ),

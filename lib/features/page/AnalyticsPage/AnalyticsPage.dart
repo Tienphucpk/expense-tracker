@@ -314,13 +314,22 @@ class _AnalyticsPageState extends State<AnalyticsPage>
             ],
           ),
           const Spacer(),
-          IconButton(
-            tooltip: 'Biểu đồ canvas',
-            onPressed: () => Navigator.of(context).push(MaterialPageRoute<void>(
+          GestureDetector(
+            onTap: () => Navigator.of(context).push(MaterialPageRoute<void>(
               builder: (_) => CanvasChartsPage(transactions: listTran, categories: widget.categories),
             )),
-            icon: const Icon(Icons.show_chart_rounded, color: Color(0xFF111827)),
+            child: Container(
+              width: 36.w,
+              height: 36.w,
+              decoration: BoxDecoration(
+                color: _surface,
+                shape: BoxShape.circle,
+                border: Border.all(color: _border, width: 1.w),
+              ),
+              child: Icon(Icons.insights_rounded, color: const Color(0xFF111827), size: 18.sp),
+            ),
           ),
+          SizedBox(width: 8.w),
           // Year badge
           Container(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
@@ -331,7 +340,7 @@ class _AnalyticsPageState extends State<AnalyticsPage>
             ),
             child: Row(
               children: [
-                Icon(Icons.calendar_today_rounded, color: const Color(0xFF111827), size: 12.sp),
+                Icon(Icons.calendar_month_rounded, color: const Color(0xFF111827), size: 13.sp),
                 SizedBox(width: 5.w),
                 Text(
                   '${DateTime.now().year}',
@@ -476,13 +485,26 @@ class _AnalyticsPageState extends State<AnalyticsPage>
                                     .withOpacity(0.15),
                                 borderRadius: BorderRadius.circular(6.r),
                               ),
-                              child: Text(
-                                _netBalance >= 0 ? '↑ Dư' : '↓ Âm',
-                                style: TextStyle(
-                                  fontSize: 11.sp,
-                                  color: _netBalance >= 0 ? _green : _red,
-                                  fontWeight: FontWeight.w700,
-                                ),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    _netBalance >= 0
+                                        ? Icons.arrow_upward_rounded
+                                        : Icons.arrow_downward_rounded,
+                                    size: 11.sp,
+                                    color: _netBalance >= 0 ? _green : _red,
+                                  ),
+                                  SizedBox(width: 2.w),
+                                  Text(
+                                    _netBalance >= 0 ? 'Dư' : 'Âm',
+                                    style: TextStyle(
+                                      fontSize: 11.sp,
+                                      color: _netBalance >= 0 ? _green : _red,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ],

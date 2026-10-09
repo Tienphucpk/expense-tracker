@@ -59,13 +59,10 @@ class AIHeader extends StatelessWidget {
               border: Border.all(color: AIColors.gold.withOpacity(0.5), width: 1.5.w),
             ),
             child: Center(
-              child: ShaderMask(
-                shaderCallback: (b) => const LinearGradient(
-                  colors: [AIColors.goldDeep, AIColors.goldLight],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ).createShader(b),
-                child: Text('✦', style: TextStyle(fontSize: 22.sp, color: Colors.white)),
+              child: Icon(
+                Icons.auto_awesome_rounded,
+                size: 22.sp,
+                color: AIColors.gold,
               ),
             ),
           ),

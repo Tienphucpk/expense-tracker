@@ -77,6 +77,10 @@ class AllTransactionsScreen extends StatelessWidget {
         centerTitle: true,
         backgroundColor: _bg,
         elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back_ios_new_rounded, color: _textPrimary, size: 18.sp),
+          onPressed: () => Navigator.pop(context),
+        ),
         iconTheme: const IconThemeData(color: _textPrimary),
       ),
       body: BlocBuilder<TransactionBloc, TransactionState>(

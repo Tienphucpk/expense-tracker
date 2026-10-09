@@ -39,11 +39,31 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   // ── Nav items ──────────────────────────────────────────────────
   static const _navItems = [
-    _NavMeta(iconPath: 'assets/icons/homepage.png',      label: 'Trang chủ'),
-    _NavMeta(iconPath: 'assets/icons/AnalyticsPage.png', label: 'Thống kê'),
-    _NavMeta(iconPath: 'assets/icons/addpage.png',       label: 'Thêm'),
-    _NavMeta(iconPath: 'assets/icons/AIPage.png',        label: 'AI'),
-    _NavMeta(iconPath: 'assets/icons/settingpage.png',   label: 'Cài đặt'),
+    _NavMeta(
+      activeIcon: Icons.home_rounded,
+      inactiveIcon: Icons.home_outlined,
+      label: 'Trang chủ',
+    ),
+    _NavMeta(
+      activeIcon: Icons.bar_chart_rounded,
+      inactiveIcon: Icons.bar_chart_outlined,
+      label: 'Thống kê',
+    ),
+    _NavMeta(
+      activeIcon: Icons.add_rounded,
+      inactiveIcon: Icons.add_rounded,
+      label: 'Thêm',
+    ),
+    _NavMeta(
+      activeIcon: Icons.auto_awesome_rounded,
+      inactiveIcon: Icons.auto_awesome_outlined,
+      label: 'AI',
+    ),
+    _NavMeta(
+      activeIcon: Icons.settings_rounded,
+      inactiveIcon: Icons.settings_outlined,
+      label: 'Cài đặt',
+    ),
   ];
 
   @override
@@ -203,10 +223,9 @@ class _NavItem extends StatelessWidget {
                 ],
               ),
               child: Center(
-                child: Image.asset(
-                  meta.iconPath,
-                  width: 20.w,
-                  height: 20.w,
+                child: Icon(
+                  meta.activeIcon,
+                  size: 24.sp,
                   color: Colors.white,
                 ),
               ),
@@ -235,10 +254,9 @@ class _NavItem extends StatelessWidget {
             child: AnimatedScale(
               scale: isSelected ? 1.05 : 1.0,
               duration: const Duration(milliseconds: 200),
-              child: Image.asset(
-                meta.iconPath,
-                width: 22.w,
-                height: 22.w,
+              child: Icon(
+                isSelected ? meta.activeIcon : meta.inactiveIcon,
+                size: 22.sp,
                 color: isSelected ? const Color(0xFF111827) : _inactive,
               ),
             ),
@@ -263,7 +281,12 @@ class _NavItem extends StatelessWidget {
 
 // ── Data model ─────────────────────────────────────────────────────
 class _NavMeta {
-  final String iconPath;
+  final IconData activeIcon;
+  final IconData inactiveIcon;
   final String label;
-  const _NavMeta({required this.iconPath, required this.label});
+  const _NavMeta({
+    required this.activeIcon,
+    required this.inactiveIcon,
+    required this.label,
+  });
 }

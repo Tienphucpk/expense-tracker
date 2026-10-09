@@ -244,18 +244,49 @@ class _HomePageState extends State<HomePage>
               ),
               SizedBox(width: 8.w),
               // Notification
-              Container(
-                width: 38.w,
-                height: 38.w,
-                decoration: BoxDecoration(
-                  color: _surface,
-                  shape: BoxShape.circle,
-                  border: Border.all(color: _border, width: 1.w),
-                ),
-                child: Icon(
-                  Icons.notifications_outlined,
-                  color: _textSecondary,
-                  size: 18.sp,
+              GestureDetector(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        'Không có thông báo mới',
+                        style: TextStyle(fontSize: 13.sp),
+                      ),
+                      behavior: SnackBarBehavior.floating,
+                      duration: const Duration(seconds: 2),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 38.w,
+                  height: 38.w,
+                  decoration: BoxDecoration(
+                    color: _surface,
+                    shape: BoxShape.circle,
+                    border: Border.all(color: _border, width: 1.w),
+                  ),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Icon(
+                        Icons.notifications_none_rounded,
+                        color: _textPrimary,
+                        size: 19.sp,
+                      ),
+                      Positioned(
+                        top: 9.h,
+                        right: 9.w,
+                        child: Container(
+                          width: 6.w,
+                          height: 6.w,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0xFFFF3B30),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(width: 8.w),
@@ -1090,13 +1121,24 @@ class _HomePageState extends State<HomePage>
                         ),
                       );
                     },
-                    child: Text(
-                      'Xem tất cả',
-                      style: TextStyle(
-                        fontSize: 13.sp,
-                        color: _gold,
-                        fontWeight: FontWeight.w500,
-                      ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          'Xem tất cả',
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            color: _gold,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        SizedBox(width: 3.w),
+                        Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          size: 11.sp,
+                          color: _gold,
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -1268,18 +1310,17 @@ class _HomePageState extends State<HomePage>
         width: 30.w,
         height: 30.w,
         decoration: BoxDecoration(
-          color: _surface,
-          borderRadius: BorderRadius.circular(8.r),
-          border: Border.all(color: _border, width: 1.w),
+          color: const Color(0xFF111827),
+          shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.02),
+              color: Colors.black.withOpacity(0.08),
               blurRadius: 6,
               offset: const Offset(0, 2),
             ),
           ],
         ),
-        child: Icon(Icons.add_rounded, color: const Color(0xFF111827), size: 16.sp),
+        child: Icon(Icons.add_rounded, color: Colors.white, size: 18.sp),
       ),
     );
   }
